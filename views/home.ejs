@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('../partials/header.ejs') %>
+    <title>Home</title>
+</head>
+
+<body>
+    <%- include('../partials/navbar.ejs') %>
+
+    <div class="container">
+        <!-- Page Content goes here -->
+        <center>
+            <h3 class="header">List Questions</h3>
+            <% if (dataLogin){ %>
+            <h4>Halo</h4>
+            <h4 style="color: teal;"> <%= dataLogin.getFullName() %></h4>
+            <% } %>
+        </center>
+        <div class="row">
+            <% for (let i = 0; i<data.length; i++){ %>
+            <div class="col s6">
+                <div class="card horizontal">
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <h6><%= data[i].question %></h6>
+                            <p>by: <%= data[i].author %></p>
+                        </div>
+                        <div class="card-action">
+                            <a href="/questions/<%=data[i].id%>">Your Opinion Here!</a>
+                            <a href="/questions/result/<%=data[i].id%>">Result</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <%} %>
+        </div>
+        <%- include('../partials/footer.ejs') %>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('../partials/header.ejs') %>
+    <title>Your Opini</title>
+</head>
+
+<body>
+    <%- include('../partials/navbar.ejs') %>
+
+    <div class="container">
+        <center>
+            <div style="margin-top: 10vh;">
+
+                <form action="/questions/<%= data.id %>" method="POST">
+                    <p><%= data.question %></p>
+                    <br>
+                    <p>
+                        <label>
+                            <input class="with-gap" name="answer" value="SETUJU" type="radio" />
+                            <span>Setuju</span>
+                        </label>
+
+                        <label>
+                            <input class="with-gap" name="answer" value="TIDAK SETUJU" type="radio" />
+                            <span>Tidak Setuju</span>
+                        </label>
+
+                        <label>
+                            <input class="with-gap" name="answer" value="TIDAK TAHU" type="radio" />
+                            <span>Tidak Tahu</span>
+                        </label>
+                    </p>
+                    <br><br><br>
+
+                    <input class="waves-light btn" type="submit">
+                </form>
+            </div>
+        </center>
+
+    </div>
+    <%- include('../partials/footer.ejs') %>
+</body>
+
+</html>

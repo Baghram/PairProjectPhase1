@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('../partials/header.ejs') %>
+    <title>Home</title>
+</head>
+
+<body>
+    <%- include('../partials/navbar.ejs') %>
+
+    <div class="container">
+        <!-- Page Content goes here -->
+        <center>
+            <h3 class="header">Questions Result</h3><br><br>
+            <h4><%= dataQ[0].question %></h4>
+        </center>
+        <div class="row">
+            <table>
+                <tr>
+                    <th>SETUJU</th>
+                    <th>TIDAK SETUJU</th>
+                    <th>TIDAK TAHU</th>
+                </tr>
+                <tr>
+                    <td><%= percent[0] %> %</td>
+                    <td><%= percent[1] %> %</td>
+                    <td><%= percent[2] %> %</td>
+                </tr>
+
+            </table>
+        </div>
+        <img
+            src="https://quickchart.io/chart?c={type:'doughnut',data:{labels:['SETUJU','TIDAK SETUJU','TIDAK TAHU'], datasets:[{data:[<%= percent[0] %>,<%= percent[1] %>,<%= percent[2] %>]}]}}">
+        <%- include('../partials/footer.ejs') %>
+</body>
+
+</html>

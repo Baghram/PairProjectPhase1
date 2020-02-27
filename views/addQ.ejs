@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('../partials/header.ejs') %>
+    <title>Add Question</title>
+</head>
+
+<body>
+    <%- include('../partials/navbar.ejs') %>
+    <div id="container" style="text-align: center; align-items: center; align-content: center;">
+        <center>
+            <div style="width: 60vw;">
+                <h2>Your Question Here</h2>
+                <form action="/questions/add" method="POST">
+                    <input hidden name="UserId" value="<%= userId %>">
+                    <label for="name">Your Anonymous Name</label><br>
+                    <input type="text" name="author"><br>
+                    <label for="question">Your Question:</label><br><br>
+                    <input type="text" id="question" name="question"><br><br>
+                    <label for="question">tag:</label><br><br>
+                    <input type="text" id="tag" name="tag"><br><br>
+                    <input type="submit" value="Submit">
+                </form>
+
+
+
+            </div>
+
+
+        </center>
+    </div>
+
+    <%- include('../partials/footer.ejs') %>
+</body>
+
+</html>

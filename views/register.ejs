@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('../partials/header.ejs') %>
+    <title>Add Question</title>
+</head>
+
+<body>
+    <%- include('../partials/navbar.ejs') %>
+    <div id="container" style="text-align: center; align-items: center; align-content: center;">
+        <center>
+            <div style="width: 40vw;">
+                <% if (err) { %>
+                <% for (let i = 0; i<err.length; i++){%>
+                <p class="flow-text"><%= err[i].message%></p>
+                <% }} %>
+                <% if (notif) { %>
+                <p class="flow-text">Success Register, Now You Can <a href="/users/login">Login</a></p>
+                <% } %>
+                <h2>Register</h2>
+                <form action="/users/register" method="POST">
+                    <label for="username">Username</label><br>
+                    <input type="text" name="username"><br>
+                    <label for="password">Password:</label><br><br>
+                    <input type="password" id="password" name="password"><br><br>
+                    <label for="firstName">firstName</label><br>
+                    <input type="text" name="firstName"><br>
+                    <label for="lastName">lastName</label><br>
+                    <input type="text" name="lastName"><br>
+                    <input class="waves-light btn" type="submit" value="Submit">
+                </form>
+
+            </div>
+
+
+        </center>
+    </div>
+
+    <%- include('../partials/footer.ejs') %>
+</body>
+
+</html>
